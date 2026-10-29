@@ -1,0 +1,91 @@
+[
+  {
+    "name": "search_specimens",
+    "description": "Search ~150M digitized natural-history museum specimen records (plants, animals, fossils) from US collections via iDigBio. Filter by any combination of taxonomy and locality. At least one filter is required. Keyless.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "scientific_name": {
+          "type": "string",
+          "description": "Scientific name, e.g. \"puma concolor\", \"quercus alba\". Matched case-insensitively."
+        },
+        "genus": {
+          "type": "string",
+          "description": "Genus, e.g. \"acer\", \"quercus\", \"puma\"."
+        },
+        "family": {
+          "type": "string",
+          "description": "Family, e.g. \"felidae\", \"sapindaceae\"."
+        },
+        "country": {
+          "type": "string",
+          "description": "Country, e.g. \"united states\", \"canada\"."
+        },
+        "state_province": {
+          "type": "string",
+          "description": "State or province, e.g. \"florida\", \"wyoming\"."
+        },
+        "recorded_by": {
+          "type": "string",
+          "description": "Collector / recorded-by name, e.g. \"macginitie\"."
+        },
+        "limit": {
+          "type": "number",
+          "description": "Max records to return (default 10, max 25)."
+        }
+      }
+    }
+  },
+  {
+    "name": "get_specimen",
+    "description": "Get the full normalized record for a single iDigBio specimen by its uuid. e.g. uuid \"0746b188-c390-4ab1-bd20-5489a9c6c33c\" (a Puma concolor record). Keyless.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "uuid": {
+          "type": "string",
+          "description": "iDigBio record uuid, e.g. \"0746b188-c390-4ab1-bd20-5489a9c6c33c\"."
+        }
+      },
+      "required": [
+        "uuid"
+      ]
+    }
+  },
+  {
+    "name": "count_by_field",
+    "description": "Get taxonomic/geographic specimen counts grouped by a field (top values + counts) across iDigBio. Optionally scope the counts with taxonomy/locality filters. Keyless.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "field": {
+          "type": "string",
+          "description": "Field to group by: one of country, stateprovince, family, genus, institutioncode, basisofrecord."
+        },
+        "scientific_name": {
+          "type": "string",
+          "description": "Optional filter to scope the counts."
+        },
+        "genus": {
+          "type": "string",
+          "description": "Optional filter to scope the counts."
+        },
+        "family": {
+          "type": "string",
+          "description": "Optional filter to scope the counts."
+        },
+        "country": {
+          "type": "string",
+          "description": "Optional filter to scope the counts."
+        },
+        "top_count": {
+          "type": "number",
+          "description": "Number of top buckets to return (default 10, max 25)."
+        }
+      },
+      "required": [
+        "field"
+      ]
+    }
+  }
+]

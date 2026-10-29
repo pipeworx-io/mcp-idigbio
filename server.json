@@ -3,7 +3,7 @@
   "name": "io.github.pipeworx-io/idigbio",
   "title": "Idigbio",
   "description": "iDigBio biodiversity specimen MCP.",
-  "version": "0.1.3",
+  "version": "0.2.0",
   "websiteUrl": "https://pipeworx.io/packs/idigbio",
   "repository": {
     "url": "https://github.com/pipeworx-io/mcp-idigbio",
