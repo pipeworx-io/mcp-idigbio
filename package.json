@@ -1,6 +1,6 @@
 {
   "name": "@pipeworx/mcp-idigbio",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "iDigBio biodiversity specimen MCP.",
   "type": "module",
   "main": "lib/index.js",
@@ -27,7 +27,7 @@
     "mode": "gateway",
     "slug": "idigbio",
     "gatewaySlug": "idigbio",
-    "sourceHash": "v1-79fd6b790b163279f4a5e40d8aded6cec2a347f9bb7349a1540f4d880ead62e3",
-    "sourceCommit": "4844029e402d6bd2fe735add8abf6d46735f8ed5"
+    "sourceHash": "v1-7b1a38ce4a1f53ceea13b177be4c97974385d58ed8cd1e7abbc6a730db94a697",
+    "sourceCommit": "0ca9712c0ac03bb0121cc7e81b202d0c45ac02ca"
   }
 }
